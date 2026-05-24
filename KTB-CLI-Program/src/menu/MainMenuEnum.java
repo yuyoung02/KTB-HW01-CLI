@@ -1,3 +1,4 @@
+package menu;
 
 // 메인 메뉴
 public enum MainMenuEnum {

@@ -1,3 +1,5 @@
+import menu.EmployeeSelectEnum;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,6 +18,7 @@ public class Admin extends Manager{
     void assignWork(){
 
         allMemSearch();
+
 
         System.out.print("할 일을 할당할 직원 이름을 입력하세요 → ");
 
@@ -72,7 +75,9 @@ public class Admin extends Manager{
         String memName = super.sc.next();
 
 
+
         System.out.print("이름: " + memName + "\n맞습니까? (Y | N): ");
+
         String ans = super.sc.next();
 
         switch (ans) {
@@ -85,7 +90,9 @@ public class Admin extends Manager{
                     System.out.println("1. "+ EmployeeSelectEnum.MANAGER.employName);
                     System.out.println("2. "+ EmployeeSelectEnum.PARTTIME.employName);
                     System.out.print("추가할 형태의 숫자를 선택하세요: ");
+
                     int employNum = super.sc.nextInt();
+
                     int currentMem = memberInfo.managers.size() + memberInfo.members.size();
                     switch (employNum){
                         case 1:{
@@ -139,6 +146,7 @@ public class Admin extends Manager{
         String memName = super.sc.next();
 
         System.out.print("이름: " + memName + "\n맞습니까? (Y | N): ");
+
         String ans = super.sc.next();
 
         switch (ans) {

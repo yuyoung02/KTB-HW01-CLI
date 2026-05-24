@@ -1,3 +1,5 @@
+package menu;
+
 public enum EmployeeSelectEnum {
     EXIT(0,"종료"),
     PARTTIME(1,"직원"),

@@ -1,3 +1,4 @@
+package menu;
 
 // 관리자 메뉴
 public enum AdminMenuEnum {

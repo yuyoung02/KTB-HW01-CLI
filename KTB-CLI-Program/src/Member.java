@@ -13,6 +13,7 @@ public class Member {
         this.memberInfo = memberInfo;
     }
 
+
     // 현재 시간 출력 메소드
     protected String timeStamp(){
 

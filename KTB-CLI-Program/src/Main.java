@@ -1,7 +1,9 @@
+import menu.AdminMenuEnum;
+import menu.EmployeeSelectEnum;
+import menu.MainMenuEnum;
+
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.InputMismatchException;
-import java.util.Scanner;
 
 public class Main  {
 
@@ -23,6 +25,11 @@ public class Main  {
         // 시스템 시작
         starter();
 
+        // 동기 프로그램 (안내 프로그램) 시작
+        Thread notiThread = new Thread(new Notification());
+        notiThread.setDaemon(true); // 메인 프로그램 종료 시 함께 종료되도록 설정
+        notiThread.start();
+
         // 메인 메뉴 시작
         EmployMenu();
 
@@ -31,11 +38,14 @@ public class Main  {
 
     // 이름 입력
     static String name(){
+
         System.out.print("이름을 입력하세요: ");
+
         String name = admin.sc.next();
 
         return name;
     }
+
 
     // 오늘 날짜 출력
     static String today(){
@@ -121,6 +131,8 @@ public class Main  {
                 }
                 System.out.println(mainMenu.menuNum + ". " + mainMenu.menuName);
             }
+
+
 
             System.out.print("이동할 메뉴를 선택하세요 → ");
 
@@ -211,9 +223,11 @@ public class Main  {
                 System.out.println(adminMenu.AdminNum + ". " + adminMenu.AdminMenu);
             }
 
+
             System.out.print("이동할 메뉴를 선택하세요 → ");
 
             String menuSelected = admin.sc.next();
+
             int menu;
 
             try{
